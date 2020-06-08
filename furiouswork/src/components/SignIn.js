@@ -76,13 +76,13 @@ const SignIn = () => {
     }
 
     const handleSignIn = () => {
-        if (params.username === signInDefault.username && params.password === signInDefault.password) {
+        if (params.username === history.location.state.username && params.password === history.location.state.password) {
             alert("dung roi")
         } else {
             alert("sai roi")
         }
     }
-
+	console.log(history.location.state)
     return (
         <Container component="main" maxWidth="xs">
         <CssBaseline />

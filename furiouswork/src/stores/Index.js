@@ -13,9 +13,9 @@ export default () => {
     let middlewares = []
 
     // production以外は redux-logger 有効
-    if (process.env.REACT_APP_APPLY_REDUX_LOGGER) {
-        middlewares.push(logger)
-    }
+    // if (process.env.REACT_APP_APPLY_REDUX_LOGGER) {
+    //     middlewares.push(logger)
+    // }
 
     const sagaMiddleware = createSagaMiddleware()
     middlewares.push(sagaMiddleware)
