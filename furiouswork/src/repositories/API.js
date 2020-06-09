@@ -14,7 +14,6 @@ const _httpStatusBranch = (response) => {
         return new Promise((resolve, reject) => {
             reject(API.specifyError(
                 "AUTH_EXPIRED",
-                "認証エラーです。"
             ))
         })
     case 404:
@@ -22,21 +21,18 @@ const _httpStatusBranch = (response) => {
         return new Promise((resolve, reject) => {
             reject(API.specifyError(
                 "SERVER_ERROR",
-                "予期せぬエラーが発生しました。"
             ))
         })
     case 503:
         return new Promise((resolve, reject) => {
             reject(API.specifyError(
                 "MAINTENANCE_ERROR",
-                "サーバがメンテナンス中です。"
             ))
         })
     default:
         return new Promise((resolve, reject) => {
             reject(API.specifyError(
                 "SERVER_ERROR",
-                "予期せぬエラーが発生しました。"
             ))
         })
     }
@@ -54,7 +50,6 @@ const API = {
             return new Promise((resolve, reject) => {
                 reject(API.specifyError(
                     "NETWORK_ERROR",
-                    "ネットワークに接続できないためサービスを利用できません。"
                 ))
             })
         }).then(response => {
@@ -77,7 +72,6 @@ const API = {
             return new Promise((resolve, reject) => {
                 reject(API.specifyError(
                     "NETWORK_ERROR",
-                    "ネットワークに接続できないためサービスを利用できません。"
                 ))
             })
         }).then(response => {
@@ -94,7 +88,6 @@ const API = {
             return new Promise((resolve, reject) => {
                 reject(API.specifyError(
                     "NETWORK_ERROR",
-                    "ネットワークに接続できないためサービスを利用できません。"
                 ))
             })
         }).then(response => {
