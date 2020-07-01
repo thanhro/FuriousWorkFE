@@ -19,6 +19,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import history from "../routers/history"
+import axios from "axios"
 
 function Copyright() {
     return (
@@ -61,6 +62,9 @@ const SignUp = () => {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
+    useEffect(() => {
+        axios.get('https://5e258d80ef37a3001450ef1a.mockapi.io/mock')
+    }, [])
     const handleSetParams = (field, value) => setParams({...params, [field]: value})
 
     const handleFirstName = e => {

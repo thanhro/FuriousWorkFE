@@ -1,3 +1,6 @@
+import axios from "axios"
+import queryString from "query-string"
+
 const _httpStatusBranch = (response) => {
     switch (response.status) {
     case 200:
@@ -125,3 +128,5 @@ const API = {
         }]
     }),
 }
+
+export default API
