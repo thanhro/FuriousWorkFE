@@ -6,7 +6,9 @@ import {withRouter} from "react-router"
 // import withScrollTop from "../../../components/enhancers/ScrollTop"
 import SignUp from "../components/SignUp"
 const mapStateToProps = state => {
-    return {}
+    return {
+        // id: state.session.user && state.session.user.id
+    }
 }
 
 const mapDispatchToProps = dispatch => {

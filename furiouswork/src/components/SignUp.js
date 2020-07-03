@@ -2,7 +2,7 @@ import React, {useEffect, useState, useMemo} from "react"
 import PropTypes from "prop-types"
 import className from "classnames"
 import Styles from "./SignUp.module.scss"
-import _ from "lodash"
+import _ from 'lodash'
 
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -18,8 +18,8 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import axios from 'axios';
 import history from "../routers/history"
-import axios from "axios"
 
 function Copyright() {
     return (
@@ -33,7 +33,7 @@ function Copyright() {
       </Typography>
     );
 }
-  
+
 const useStyles = makeStyles((theme) => ({
     paper: {
       marginTop: theme.spacing(8),
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     submit: {
       margin: theme.spacing(3, 0, 2),
     },
-}));
+}))
 
 const SignUp = () => {
     const classes = useStyles();
@@ -65,11 +65,12 @@ const SignUp = () => {
     useEffect(() => {
         axios.get('https://5e258d80ef37a3001450ef1a.mockapi.io/mock')
     }, [])
+
     const handleSetParams = (field, value) => setParams({...params, [field]: value})
 
     const handleFirstName = e => {
         setFirstName(e.target.value)
-        setParams({...params, firstName: e.target.value})
+        setParams({...params, firstName: e.target.value })
     }
 
     const handleLastName = e => {
@@ -79,8 +80,8 @@ const SignUp = () => {
 
     const handleChangeUsername = e => {
         setUsername(e.target.value)
-        setParams({...params, username: e.target.value})
-    }
+        setParams({ ...params, username: e.target.value });
+    };
 
     const handleChangePassword = e => {
         setPassword(e.target.value)
@@ -89,14 +90,14 @@ const SignUp = () => {
 
     const handleSignUp = () => {
         history.push({
-            pathname: "/signin", state: params
+            pathname: '/signin', state: params
         })
     }
 
     return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <div className={classes.paper}>
+        <Container component="main" maxWidth="xs">
+            <CssBaseline />
+            <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>

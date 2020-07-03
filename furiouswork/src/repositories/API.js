@@ -49,7 +49,6 @@ const API = {
             headers: API.buildHeader(token),
             body: JSON.stringify(Object.assign({}, body))
         }).catch(() => {
-            // 途中でオフラインになるなどそもそもネットワークに異常をきたした場合
             return new Promise((resolve, reject) => {
                 reject(API.specifyError(
                     "NETWORK_ERROR",
@@ -71,7 +70,6 @@ const API = {
             headers: API.buildHeaderWithFile(token),
             body: formData
         }).catch(() => {
-            // 途中でオフラインになるなどそもそもネットワークに異常をきたした場合
             return new Promise((resolve, reject) => {
                 reject(API.specifyError(
                     "NETWORK_ERROR",
