@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
-const SignUp = () => {
+const SignUp = ({ fetchTestAPI }) => {
     const classes = useStyles();
     const [params, setParams] = useState({})
     const [firstName, setFirstName] = useState("")
@@ -63,7 +63,8 @@ const SignUp = () => {
     const [password, setPassword] = useState("")
 
     useEffect(() => {
-        axios.get('https://5e258d80ef37a3001450ef1a.mockapi.io/mock')
+        // axios.get('https://5e258d80ef37a3001450ef1a.mockapi.io/mock')
+        fetchTestAPI()
     }, [])
 
     const handleSetParams = (field, value) => setParams({...params, [field]: value})
