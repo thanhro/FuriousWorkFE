@@ -2,29 +2,28 @@ import {
     all,
     call,
     put,
-    takeLeading,
     takeLatest,
-    select,
 } from 'redux-saga/effects'
-import _ from 'lodash'
+import * as Action from '../actions/SignUp'
 // import Cookies from "universal-cookie"
-import AxiosClient from '../repositories/AxiosClient'
+import API from '../repositories/API'
 
 function* test(action) {
     try {
         const response = yield call(
-            AxiosClient.get,
+            API.get,
             {
-                endpoint: 'https://5e258d80ef37a3001450ef1a.mockapi.io/mock',
+                endpoint: '/mock',
             },
         )
+        yield put(Action.TestReceived(response))
     } catch (error) {
-        return null
+        yield put(Action.TestReceiveFailure(yield error))
     }
 }
 
 export function* watchAuthLoaderSignUp() {
     yield all([
-        takeLatest('TEST', test),
+        takeLatest('TEST_REQUESTED', test),
     ])
 }
