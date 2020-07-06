@@ -8,6 +8,7 @@ import history from './routers/history'
 import './index.css'
 import SignInComponent from './containers/SignIn'
 import SignUpComponent from './containers/SignUp'
+import HomeComponent from './containers/Home'
 import * as serviceWorker from './serviceWorker'
 
 const Root = ({ store }) => (
@@ -16,6 +17,7 @@ const Root = ({ store }) => (
             <Switch>
                 <Route path="/signin" exact component={SignInComponent} />
                 <Route path="/signup" exact component={SignUpComponent} />
+                <Route path="/home" exact component={HomeComponent} />
             </Switch>
         </Router>
     </Provider>

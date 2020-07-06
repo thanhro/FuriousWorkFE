@@ -8,8 +8,8 @@ const API = {
         try {
             response = await axiosClient.get(endpoint, { params })
         } catch (error) {
-            return error
             console.log('Failed to call api get', error)
+            return error
         }
         return response
     },
