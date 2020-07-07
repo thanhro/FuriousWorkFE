@@ -85,14 +85,14 @@ const SignUp = ({ fetchTestAPI }) => {
         setParams({ ...params, username: e.target.value })
     }
 
-    const handleChangePassword = e => {
+    const handleChangePassword = (e) => {
         setPassword(e.target.value)
         setParams({ ...params, password: e.target.value })
     }
 
     const handleSignUp = () => {
         history.push({
-            pathname: '/signin', state: params
+            pathname: '/signin', state: params,
         })
     }
 

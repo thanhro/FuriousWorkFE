@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+}
+
+.container {
+    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    word-break: break-all;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    float: right !important;
+}
+
+li {
+    float: left;
+    margin-right: 30px;
+    list-style: none;
+}
