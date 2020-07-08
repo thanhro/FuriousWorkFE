@@ -2,54 +2,46 @@ import React from 'react'
 import {
     Grid,
     Box,
-    Tab,
-    Tabs,
-    Paper,
 } from '@material-ui/core'
-import PhoneIcon from '@material-ui/icons/Phone'
-import FavoriteIcon from '@material-ui/icons/Favorite'
-import PersonPinIcon from '@material-ui/icons/PersonPin'
 import { makeStyles } from '@material-ui/core/styles'
+import Styles from './Header.module.scss'
 import WrapperContainer from './WrapperContainer'
 
 const useStyles = makeStyles({
-    root: {
-        flexGrow: 1,
-        maxWidth: 500,
+    fixContainerHeader: {
+        padding: '15px',
+    },
+    image: {
+        width: '50px',
+        height: '50px',
+        float: 'left',
+        borderRadius: '50%',
+        border: '1px solid #333',
+    },
+    text_logo: {
+        marginLeft: '10px',
+        float: 'left',
+        display: 'flex',
+        position: 'relative',
+        alignItems: 'center',
     },
 })
 
 const Header = () => {
-    const classes = useStyles();
-    const [value, setValue] = React.useState(0);
-
-    const handleChange = (event, newValue) => {
-        setValue(newValue)
-    }
+    const classes = useStyles()
 
     return (
-        <WrapperContainer>
+        <WrapperContainer className={classes.fixContainerHeader}>
             <Grid container spacing={0} xs="12">
-                <Grid xs="4">
+                <Grid item xs="4" style={{ display: 'flex' }}>
                     <Box>
-                        <h1>Furious Work</h1>
+                        <img className={classes.image} src="https://s3.amazonaws.com/creativetim_bucket/new_logo.png" alt="logo" />
+                    </Box>
+                    <Box className={classes.text_logo}>
+                        Furious Work
                     </Box>
                 </Grid>
-                <Grid xs="8">
-                    {/* <Paper square className={classes.root}>
-                        <Tabs
-                            value={value}
-                            onChange={handleChange}
-                            variant="standard"
-                            indicatorColor="secondary"
-                            textColor="secondary"
-                            aria-label="icon label tabs example"
-                        >
-                            <Tab icon={<PhoneIcon fontSize="small" />} />
-                            <Tab icon={<FavoriteIcon fontSize="small" />} />
-                            <Tab icon={<PersonPinIcon fontSize="small" />} />
-                        </Tabs>
-                    </Paper> */}
+                <Grid item xs="8">
                     <Grid
                         container
                         direction="row"

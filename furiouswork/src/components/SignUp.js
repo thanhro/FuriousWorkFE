@@ -1,7 +1,6 @@
-import React, {useEffect, useState, useMemo} from "react"
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import className from 'classnames'
-import Styles from './SignUp.module.scss'
 import _ from 'lodash'
 
 import Avatar from '@material-ui/core/Avatar'
@@ -18,7 +17,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
-import axios from 'axios'
+import Styles from './SignUp.module.scss'
 import history from '../routers/history'
 
 function Copyright() {
