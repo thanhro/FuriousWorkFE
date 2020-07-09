@@ -22,8 +22,25 @@ function* test(action) {
     }
 }
 
+function* signup(action) {
+    try {
+        const response = yield call(
+            API.post,
+            {
+                endpoint: '/Furious',
+                params: action.payload
+            },
+        )
+        yield put(Action.SignupReceived(response))
+    } catch (error) {
+        yield put(Action.SignupReceiveFailure(yield error))
+    }
+}
+
+
 export function* watchAuthLoaderSignUp() {
     yield all([
         takeLatest('TEST_REQUESTED', test),
+        takeLatest('SIGNUP_REQUESTED', signup)
     ])
 }

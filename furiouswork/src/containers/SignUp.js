@@ -5,7 +5,7 @@ import {withRouter} from 'react-router'
 // import withAuthentication from "../../../components/enhancers/AuthEnhancer"
 // import withScrollTop from "../../../components/enhancers/ScrollTop"
 import SignUp from '../components/SignUp'
-import { TestRequested } from '../actions/SignUp'
+import { TestRequested, SignupRequested } from '../actions/SignUp'
 
 const mapStateToProps = state => {
     return {
@@ -16,8 +16,11 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchTestAPI: () => {
-            dispatch(TestRequested())
+            dispatch(TestRequested())  
         },
+        fetchSignupAPI: () => {
+            dispatch(SignupRequested())
+        }
     }
 }
 

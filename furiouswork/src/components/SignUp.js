@@ -4,6 +4,7 @@ import className from 'classnames'
 import Styles from './SignUp.module.scss'
 import _ from 'lodash'
 
+
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -54,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
-const SignUp = ({ fetchTestAPI }) => {
+const SignUp = ({ fetchTestAPI, fetchSignup }) => {
     const classes = useStyles();
     const [params, setParams] = useState({})
     const [firstName, setFirstName] = useState('')
@@ -91,9 +92,10 @@ const SignUp = ({ fetchTestAPI }) => {
     }
 
     const handleSignUp = () => {
-        history.push({
-            pathname: '/signin', state: params,
-        })
+        fetchSignup({ ...params })
+        // history.push({
+        //     pathname: '/signin', state: params,
+        // })
     }
 
     return (
@@ -183,6 +185,7 @@ const SignUp = ({ fetchTestAPI }) => {
                         </Grid>
                     </Grid>
                 </form>
+                
             </div>
             <Box mt={5}>
                 <Copyright />

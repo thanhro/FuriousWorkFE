@@ -13,6 +13,17 @@ const API = {
         }
         return response
     },
+
+    post: async ({ endpoint, params }) => {
+        let response
+        try {
+            response = await axiosClient.post(endpoint, { params })
+        } catch (error) {
+            console.log('Failed to call api get', error)
+            return error
+        }
+        return response
+    },
 }
 
 export default API

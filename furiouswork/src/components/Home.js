@@ -7,13 +7,16 @@ import WrapperContainer from './common/WrapperContainer'
 import Header from './common/Header'
 import { Grid } from '@material-ui/core'
 
-const Home = () => {
 
+const Home = ({location}) => {
+    console.log(location.state)
     return (
         <WrapperContainer>
             <Header />
             <Grid xs="12">
-                Day la Body
+                {location.state.profileObj.name}
+                {location.state.profileObj.name}
+                {location.state.profileObj.name}
             </Grid>
         </WrapperContainer>
     )

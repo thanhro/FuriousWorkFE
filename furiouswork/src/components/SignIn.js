@@ -1,7 +1,10 @@
 import React, { useEffect, useState, useMemo } from 'react'
+import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import className from 'classnames'
 import _ from 'lodash'
+
+import GoogleLogin from 'react-google-login'
 
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
@@ -22,6 +25,13 @@ import history from '../routers/history'
 const signInDefault = {
     username: 'lethanh309@gmail.com',
     password: '1234',
+}
+
+
+const responseGoogle = (response) => {
+    history.push({
+        pathname: '/home', state: response,
+    })
 }
 
 function Copyright() {
@@ -148,6 +158,12 @@ const SignIn = () => {
                         </Grid>
                     </Grid>
                 </form>
+                <GoogleLogin
+                    clientId="870636968536-lkiki5soqjir9emfhmh15hkglsa2cgfm.apps.googleusercontent.com"
+                    onSuccess={responseGoogle}
+                    onFailure={responseGoogle}
+                    cookiePolicy={'single_host_origin'}             
+                />,
             </div>
             <Box mt={8}>
                 <Copyright />
